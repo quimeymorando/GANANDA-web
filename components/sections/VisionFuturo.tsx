@@ -85,7 +85,7 @@ export default function VisionFuturo() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="body-lg text-[var(--texto-gris)] max-w-2xl mx-auto"
                     >
-                        ANIMA no trabaja con productores pequeños. Trabajamos con grandes empresas
+                        GANANDA no trabaja con productores pequeños. Trabajamos con grandes empresas
                         que pueden aprovechar plenamente el potencial de la biotecnología aplicada.
                     </motion.p>
                 </div>
@@ -144,7 +144,7 @@ export default function VisionFuturo() {
                         style={{ background: 'rgba(13,31,21,0.5)' }}
                     >
                         <p className="font-editorial text-xl md:text-2xl text-[var(--texto-claro)] italic mb-4">
-                            &ldquo;ANIMA es el puente entre lo que somos biológicamente
+                            &ldquo;GANANDA es el puente entre lo que somos biológicamente
                             y lo que podemos llegar a ser conscientemente.&rdquo;
                         </p>
                         <div className="divider-dorado" />

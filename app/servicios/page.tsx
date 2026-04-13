@@ -78,35 +78,49 @@ function HelixSVG() {
     const AMPLITUDE = 20
     const SPACING = 14
 
-    const [phase, setPhase] = useState(0)
+    const svgRef = useRef<SVGSVGElement>(null)
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => { setMounted(true) }, [])
 
     useAnimationFrame((t) => {
-        if (mounted) setPhase(t * 0.0008)
+        const svg = svgRef.current
+        if (!svg || !mounted) return
+
+        const phase = t * 0.0008
+        const bridges = svg.querySelectorAll<SVGLineElement>('[data-helix="bridge"]')
+        const lefts = svg.querySelectorAll<SVGCircleElement>('[data-helix="left"]')
+        const rights = svg.querySelectorAll<SVGCircleElement>('[data-helix="right"]')
+
+        for (let i = 0; i < STEPS; i++) {
+            const angle = phase + (i / STEPS) * Math.PI * 2
+            const xOffset = Math.sin(angle) * AMPLITUDE
+            const depth = Math.cos(angle)
+            const r = Math.max(1.5, 3 + depth * 1.5)
+            const opacity = 0.4 + (depth + 1) * 0.3
+            const bridgeOpacity = Math.abs(depth) * 0.6 + 0.1
+            const leftCx = CX - xOffset
+            const rightCx = CX + xOffset
+
+            bridges[i]?.setAttribute('x1', String(leftCx))
+            bridges[i]?.setAttribute('x2', String(rightCx))
+            bridges[i]?.setAttribute('stroke-width', String(bridgeOpacity * 2))
+            bridges[i]?.setAttribute('opacity', String(bridgeOpacity))
+
+            lefts[i]?.setAttribute('cx', String(leftCx))
+            lefts[i]?.setAttribute('r', String(r))
+            lefts[i]?.setAttribute('opacity', String(opacity))
+
+            rights[i]?.setAttribute('cx', String(rightCx))
+            rights[i]?.setAttribute('r', String(r))
+            rights[i]?.setAttribute('opacity', String(opacity))
+        }
     })
 
     if (!mounted) return null
 
-    const nodes = Array.from({ length: STEPS }, (_, i) => {
-        const angle = phase + (i / STEPS) * Math.PI * 2
-        const xOffset = Math.sin(angle) * AMPLITUDE
-        const depth = Math.cos(angle)
-        const r = 3 + depth * 1.5
-        const opacity = 0.4 + (depth + 1) * 0.3
-        return {
-            cy: 14 + i * SPACING,
-            leftCx: CX - xOffset,
-            rightCx: CX + xOffset,
-            r: Math.max(1.5, r),
-            opacity,
-            bridgeOpacity: Math.abs(depth) * 0.6 + 0.1,
-        }
-    })
-
     return (
-        <svg viewBox="0 0 120 220" className="w-2/5 h-auto py-2">
+        <svg ref={svgRef} viewBox="0 0 120 220" className="w-2/5 h-auto py-2">
             <defs>
                 <linearGradient id="helixGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#c9a84c" stopOpacity="0.9" />
@@ -114,15 +128,18 @@ function HelixSVG() {
                     <stop offset="100%" stopColor="#c9a84c" stopOpacity="0.9" />
                 </linearGradient>
             </defs>
-            {nodes.map((n, i) => (
-                <line key={`b-${i}`} x1={n.leftCx} y1={n.cy} x2={n.rightCx} y2={n.cy}
-                    stroke="rgba(201,168,76,0.5)" strokeWidth={n.bridgeOpacity * 2} opacity={n.bridgeOpacity} />
+            {Array.from({ length: STEPS }, (_, i) => {
+                const cy = 14 + i * SPACING
+                return (
+                    <line key={`b-${i}`} data-helix="bridge" x1={CX} y1={cy} x2={CX} y2={cy}
+                        stroke="rgba(201,168,76,0.5)" strokeWidth="1" opacity="0.5" />
+                )
+            })}
+            {Array.from({ length: STEPS }, (_, i) => (
+                <circle key={`l-${i}`} data-helix="left" cx={CX} cy={14 + i * SPACING} r="3" fill="url(#helixGrad)" opacity="0.5" />
             ))}
-            {nodes.map((n, i) => (
-                <circle key={`l-${i}`} cx={n.leftCx} cy={n.cy} r={n.r} fill="url(#helixGrad)" opacity={n.opacity} />
-            ))}
-            {nodes.map((n, i) => (
-                <circle key={`r-${i}`} cx={n.rightCx} cy={n.cy} r={n.r} fill="url(#helixGrad)" opacity={n.opacity} />
+            {Array.from({ length: STEPS }, (_, i) => (
+                <circle key={`r-${i}`} data-helix="right" cx={CX} cy={14 + i * SPACING} r="3" fill="url(#helixGrad)" opacity="0.5" />
             ))}
         </svg>
     )
@@ -336,7 +353,7 @@ export default function ServiciosPage() {
                         numero="01"
                         tag="Escalabilidad Masiva"
                         titulo="Micropropagación y Cultivo de Tejidos"
-                        concepto="Multiplicación exponencial, calidad uniforme"
+                        concepto="Multiplicación exponencial, material genéticamente uniforme"
                         descripcion="Multiplicamos la producción de plantas entre 4x y 8x cada tres semanas mediante micropropagación del meristema. Material vegetal uniforme, vigoroso y listo para producción. Una ventaja que ningún vivero tradicional puede igualar."
                         highlights={[
                             { valor: '4x–8x', label: 'Multiplicación' },
@@ -441,7 +458,7 @@ export default function ServiciosPage() {
                         className="body-lg text-[var(--texto-gris)] max-w-xl mx-auto mb-10"
                     >
                         Trabajamos con grandes productores que buscan diferenciarse con ciencia real.
-                        Agendá una consultoría técnica y descubrí cómo ANIMA puede transformar tu operación.
+                        Agendá una consultoría técnica y descubrí cómo GANANDA puede transformar tu operación.
                     </motion.p>
 
                     <motion.div

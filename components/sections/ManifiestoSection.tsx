@@ -11,7 +11,7 @@ const fragmentos = [
 ]
 
 const manifiesto = [
-    { texto: 'ANIMA no es una marca. Es un espacio.', destacado: true },
+    { texto: 'GANANDA no es una marca. Es un espacio.', destacado: true },
     {
         texto: 'Un espacio donde la ciencia sirve a la expansión humana. Donde la experiencia se honra con rigor. Donde la comunidad reemplaza la competencia.',
         destacado: false,
@@ -50,7 +50,7 @@ function AnimatedLine({
 export default function ManifiestoSection() {
     return (
         <section
-            id="manifiesto"
+            id="nosotros"
             className="relative section-padding overflow-hidden"
             style={{
                 background: 'linear-gradient(180deg, #060f09 0%, #0d1f15 30%, #111f18 70%, #0d1f15 100%)',
@@ -71,7 +71,7 @@ export default function ManifiestoSection() {
                 {/* ── Nuevo Titular ─────────────────────────────────────── */}
                 <AnimatedLine className="mb-14">
                     <h2 className="font-editorial text-4xl sm:text-5xl md:text-6xl text-gradient-dorado leading-tight">
-                        Esencia ANIMA
+                        Esencia GANANDA
                     </h2>
                 </AnimatedLine>
 
@@ -129,7 +129,7 @@ export default function ManifiestoSection() {
                     </AnimatedLine>
                     <AnimatedLine delay={0.6}>
                         <p className="font-editorial text-3xl md:text-4xl text-[var(--texto-claro)]">
-                            Ya eres parte de ANIMA.
+                            Ya eres parte de GANANDA.
                         </p>
                     </AnimatedLine>
                     <AnimatedLine delay={0.8}>

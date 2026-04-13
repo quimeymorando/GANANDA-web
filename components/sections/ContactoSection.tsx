@@ -9,9 +9,16 @@ export default function ContactoSection() {
     const inView = useInView(ref, { once: true, margin: '-80px' })
     const [enviado, setEnviado] = useState(false)
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        // CMS-ready: aquí se conectará con el backend o servicio de email
+        const form = e.currentTarget
+        const nombre = (form.elements.namedItem('nombre') as HTMLInputElement).value
+        const email = (form.elements.namedItem('email') as HTMLInputElement).value
+        const mensaje = (form.elements.namedItem('mensaje') as HTMLTextAreaElement).value
+
+        const subject = encodeURIComponent(`Contacto GANANDA — ${nombre}`)
+        const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`)
+        window.open(`mailto:contacto@gananda.bio?subject=${subject}&body=${body}`, '_self')
         setEnviado(true)
     }
 
@@ -130,9 +137,9 @@ export default function ContactoSection() {
                                 className="text-center py-16 border border-[rgba(201,168,76,0.2)]"
                             >
                                 <div className="text-4xl mb-4">🌿</div>
-                                <h3 className="heading-md text-[var(--texto-oscuro)] mb-2">Mensaje recibido</h3>
+                                <h3 className="heading-md text-[var(--texto-oscuro)] mb-2">Casi listo</h3>
                                 <p className="text-[var(--verde-musgo)] text-sm">
-                                    Nos pondremos en contacto contigo pronto.
+                                    Se abrio tu cliente de email con el mensaje preparado. Envialo para completar el contacto.
                                 </p>
                             </motion.div>
                         )}

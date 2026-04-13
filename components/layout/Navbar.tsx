@@ -8,8 +8,9 @@ import { usePathname, useRouter } from 'next/navigation'
 
 const navLinks = [
     { href: '/servicios', label: 'Servicios', isPage: true },
-    { href: '#investigacion', label: 'Investigación', isPage: false },
-    { href: '#nosotros', label: 'Nosotros', isPage: false },
+    { href: '/investigacion', label: 'Investigación', isPage: true },
+    { href: '/manifiesto', label: 'Manifiesto', isPage: true },
+    { href: '/lafamiliadetras', label: 'La familia detrás', isPage: true },
 ]
 
 export default function Navbar() {
@@ -60,7 +61,7 @@ export default function Navbar() {
                             href="/"
                             className="font-editorial text-xl md:text-2xl tracking-[0.2em] text-[var(--texto-claro)] hover:text-[var(--dorado-claro)] transition-colors duration-300"
                         >
-                            ANIMA
+                            GANANDA
                         </Link>
 
                         {/* Desktop Links */}
@@ -131,7 +132,7 @@ export default function Navbar() {
                         </button>
 
                         <div className="font-editorial text-3xl tracking-[0.3em] text-[var(--dorado-claro)] mb-12">
-                            ANIMA
+                            GANANDA
                         </div>
 
                         <nav className="flex flex-col items-center gap-8">

@@ -7,7 +7,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                anima: {
+                gananda: {
                     'verde-profundo': '#1a3a2a',
                     'verde-musgo': '#2d5a3d',
                     'verde-brote': '#4a8c5c',
@@ -21,8 +21,8 @@ module.exports = {
                 },
             },
             fontFamily: {
-                serif: ['Playfair Display', 'Georgia', 'serif'],
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+                sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
             },
             backgroundImage: {
                 'gradient-anima': 'linear-gradient(135deg, #0d1f15 0%, #1a3a2a 50%, #0d1f15 100%)',

@@ -94,7 +94,7 @@ export default function AutoridadCientifica() {
 
     return (
         <section
-            id="autoridad"
+            id="investigacion"
             className="section-padding section-clara"
         >
             <div className="container-anima">

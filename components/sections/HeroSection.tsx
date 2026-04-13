@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -84,9 +85,13 @@ export default function HeroSection() {
                         lineHeight: 0,
                     }}
                 >
-                    <img
+                    <Image
                         src="/anima2.png"
                         alt="Hoja de cannabis"
+                        width={580}
+                        height={580}
+                        priority
+                        sizes="(max-width: 768px) 70vw, 580px"
                         style={{
                             display: 'block',
                             width: '100%',
@@ -99,23 +104,31 @@ export default function HeroSection() {
                 </motion.div>
 
                 {/* Texto — centrado en mobile, a la derecha en desktop */}
-                <div className="flex-1 flex items-center justify-center md:justify-start text-center md:text-left pb-20 md:pb-28 px-4 sm:px-6 md:px-10 z-20">
+                <div className="flex-1 flex flex-col items-center justify-center md:items-start text-center md:text-left pb-20 md:pb-28 px-4 sm:px-6 md:px-10 z-20">
                     <motion.h1
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"
                         custom={0.5}
-                        className="heading-xl text-[var(--texto-claro)]"
-                        style={{ lineHeight: '1.2' }}
+                        className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[var(--texto-claro)]"
+                        style={{ lineHeight: '1.25' }}
                     >
-                        El puente entre lo{' '}
-                        <br className="block md:hidden" />
-                        que somos{' '}
-                        <em className="text-gradient-dorado not-italic block md:inline">biológicamente</em>
-                        <br className="hidden md:block" />
-                        y lo que podemos ser{' '}
-                        <em className="text-gradient-verde not-italic block md:inline">conscientemente.</em>
+                        Somos el puente entre la{' '}
+                        <em className="text-gradient-dorado not-italic">ciencia,</em>
+                        {' '}la experiencia y la{' '}
+                        <em className="text-gradient-verde not-italic">trazabilidad</em>
+                        {' '}que la nueva salud exige.
                     </motion.h1>
+                    <motion.p
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="visible"
+                        custom={0.9}
+                        className="mt-5 max-w-sm text-xs md:text-sm text-[var(--texto-gris)] leading-relaxed italic font-editorial"
+                        style={{ opacity: 0.7 }}
+                    >
+                        La única empresa en el mundo que puede prometer un resultado en salud sobre la sanidad del cannabis.
+                    </motion.p>
                 </div>
             </div>
 

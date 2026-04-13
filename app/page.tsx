@@ -1,5 +1,5 @@
 import HeroSection from '@/components/sections/HeroSection'
-import ManifiestoSection from '@/components/sections/ManifiestoSection'
+import PropositoSection from '@/components/sections/PropositoSection'
 import AutoridadCientifica from '@/components/sections/AutoridadCientifica'
 import ServiciosSection from '@/components/sections/ServiciosSection'
 import VisionFuturo from '@/components/sections/VisionFuturo'
@@ -9,8 +9,8 @@ export default function HomePage() {
     return (
         <>
             <HeroSection />
-            <ManifiestoSection />
             <AutoridadCientifica />
+            <PropositoSection />
             <ServiciosSection />
             <VisionFuturo />
             <ContactoSection />
