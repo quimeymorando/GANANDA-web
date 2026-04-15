@@ -70,12 +70,12 @@ export default function HeroSection() {
             {/* Layout: flex-col en mobile (imagen arriba, texto abajo), flex-row en desktop */}
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-end flex-1 w-full pt-4 md:pt-0 h-full">
 
-                {/* Imagen — align a la izquierda en mobile para mantener el estilo, abajo a la izquierda en desktop */}
+                {/* Imagen — abajo en mobile, izquierda en desktop */}
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.35, ease: 'easeOut' }}
-                    className="flex-shrink-0 self-start md:self-end mt-2 md:mt-0"
+                    className="flex-shrink-0 self-start md:self-end mt-2 md:mt-0 order-2 md:order-1"
                     style={{
                         width: 'clamp(260px, 70vw, 580px)',
                         marginLeft: 0,
@@ -103,8 +103,8 @@ export default function HeroSection() {
                     />
                 </motion.div>
 
-                {/* Texto — centrado en mobile, a la derecha en desktop */}
-                <div className="flex-1 flex flex-col items-center justify-center md:items-start text-center md:text-left pb-20 md:pb-28 px-4 sm:px-6 md:px-10 z-20">
+                {/* Texto — arriba en mobile, derecha en desktop */}
+                <div className="flex-1 flex flex-col items-center justify-center md:items-start text-center md:text-left pt-8 pb-4 md:pt-0 md:pb-28 px-4 sm:px-6 md:px-10 z-20 order-1 md:order-2">
                     <motion.h1
                         variants={fadeUp}
                         initial="hidden"
@@ -124,7 +124,7 @@ export default function HeroSection() {
                         initial="hidden"
                         animate="visible"
                         custom={0.9}
-                        className="mt-5 max-w-sm text-xs md:text-sm text-[var(--texto-gris)] leading-relaxed italic font-editorial"
+                        className="mt-5 max-w-sm text-sm md:text-base text-[var(--texto-gris)] leading-relaxed italic font-editorial"
                         style={{ opacity: 0.7 }}
                     >
                         La única empresa en el mundo que puede prometer un resultado en salud sobre la sanidad del cannabis.

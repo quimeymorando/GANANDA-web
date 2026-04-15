@@ -2,34 +2,35 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { TrendingUp, Clock, ClipboardList, ShieldCheck } from 'lucide-react'
 
 const metricas = [
     {
         valor: '4x – 8x',
         label: 'Multiplicación de productividad',
         descripcion: 'Escalamos la producción de plantas cada tres semanas mediante micropropagación del meristema.',
-        icono: '⬡',
+        Icono: TrendingUp,
         grande: false,
     },
     {
         valor: '8x',
         label: 'Reducción de tiempo',
         descripcion: 'En Doble Haploide: de 8 años a 1 año en desarrollo de variedades estables.',
-        icono: '◎',
+        Icono: Clock,
         grande: false,
     },
     {
         valor: '+40',
         label: 'Protocolos establecidos',
         descripcion: 'Protocolos exclusivos de cultivo validados y documentados en múltiples especies.',
-        icono: '◈',
+        Icono: ClipboardList,
         grande: false,
     },
     {
         valor: '100%',
         label: 'Saneamiento de origen',
         descripcion: 'Eliminación de virus desde el inicio. Plantas sanas, libres de patógenos, con vigor superior.',
-        icono: '◉',
+        Icono: ShieldCheck,
         grande: false,
     },
 ]
@@ -60,8 +61,8 @@ function MetricaCard({
             className="metrica-card"
         >
             {/* Icono decorativo */}
-            <div className="text-[var(--dorado)] text-2xl mb-4" style={{ opacity: 0.4 }}>
-                {metrica.icono}
+            <div className="mb-4" style={{ color: 'var(--dorado)', opacity: 0.6 }}>
+                <metrica.Icono size={28} strokeWidth={1.5} />
             </div>
 
             {/* Valor */}

@@ -117,7 +117,7 @@ export default function InvestigacionPage() {
                 1. HERO
             ═══════════════════════════════════════════════════════════════ */}
             <section
-                className="relative flex items-center justify-center pattern-celular"
+                className="relative min-h-screen flex items-center justify-center pattern-celular"
                 style={{
                     background: 'radial-gradient(ellipse at 40% 50%, #1a3a2a 0%, #0d1f15 60%, #060f09 100%)',
                 }}
@@ -143,11 +143,11 @@ export default function InvestigacionPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.5, delay: 0.4, ease: 'easeOut' }}
-                    className="absolute top-0 -left-10 sm:-left-12 md:-left-16 lg:-left-20 w-[320px] sm:w-[400px] md:w-[520px] lg:w-[650px] pointer-events-none"
+                    className="absolute top-[15%] md:top-[10%] left-0 sm:-left-8 md:-left-16 lg:-left-20 w-[85vw] sm:w-[420px] md:w-[520px] lg:w-[650px] pointer-events-none"
                     style={{
-                        maskImage: 'linear-gradient(to left, transparent 0%, black 40%), linear-gradient(to top, transparent 0%, black 35%)',
+                        maskImage: 'linear-gradient(to left, transparent 0%, black 50%), linear-gradient(to top, transparent 0%, black 60%)',
                         maskComposite: 'intersect',
-                        WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 40%), linear-gradient(to top, transparent 0%, black 35%)',
+                        WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 50%), linear-gradient(to top, transparent 0%, black 60%)',
                         WebkitMaskComposite: 'source-in',
                     }}
                 >
@@ -157,8 +157,8 @@ export default function InvestigacionPage() {
                         width={650}
                         height={366}
                         className="w-full h-auto block"
-                        style={{ opacity: 0.3 }}
-                        sizes="(max-width: 640px) 320px, (max-width: 768px) 400px, (max-width: 1024px) 520px, 650px"
+                        style={{ opacity: 0.45 }}
+                        sizes="(max-width: 640px) 85vw, (max-width: 768px) 420px, (max-width: 1024px) 520px, 650px"
                     />
                 </motion.div>
 
@@ -167,11 +167,11 @@ export default function InvestigacionPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.5, delay: 0.6, ease: 'easeOut' }}
-                    className="absolute bottom-0 -right-10 sm:-right-12 md:-right-16 lg:-right-20 w-[320px] sm:w-[400px] md:w-[520px] lg:w-[650px] pointer-events-none"
+                    className="absolute bottom-0 right-0 sm:-right-8 md:-right-16 lg:-right-20 w-[85vw] sm:w-[420px] md:w-[520px] lg:w-[650px] pointer-events-none"
                     style={{
-                        maskImage: 'linear-gradient(to right, transparent 0%, black 40%), linear-gradient(to bottom, transparent 0%, black 35%)',
+                        maskImage: 'linear-gradient(to right, transparent 0%, black 50%), linear-gradient(to bottom, transparent 0%, black 40%)',
                         maskComposite: 'intersect',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 40%), linear-gradient(to bottom, transparent 0%, black 35%)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 50%), linear-gradient(to bottom, transparent 0%, black 40%)',
                         WebkitMaskComposite: 'source-in',
                     }}
                 >
@@ -181,8 +181,8 @@ export default function InvestigacionPage() {
                         width={650}
                         height={366}
                         className="w-full h-auto block"
-                        style={{ opacity: 0.3 }}
-                        sizes="(max-width: 640px) 320px, (max-width: 768px) 400px, (max-width: 1024px) 520px, 650px"
+                        style={{ opacity: 0.45 }}
+                        sizes="(max-width: 640px) 85vw, (max-width: 768px) 420px, (max-width: 1024px) 520px, 650px"
                     />
                 </motion.div>
 

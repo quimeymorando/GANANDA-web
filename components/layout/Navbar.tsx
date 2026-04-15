@@ -61,7 +61,7 @@ export default function Navbar() {
                             href="/"
                             className="font-editorial text-xl md:text-2xl tracking-[0.2em] text-[var(--texto-claro)] hover:text-[var(--dorado-claro)] transition-colors duration-300"
                         >
-                            GANANDA
+                            GANANDA<span className="text-sm md:text-base align-top mt-1">pro</span>
                         </Link>
 
                         {/* Desktop Links */}
@@ -132,7 +132,7 @@ export default function Navbar() {
                         </button>
 
                         <div className="font-editorial text-3xl tracking-[0.3em] text-[var(--dorado-claro)] mb-12">
-                            GANANDA
+                            GANANDA<span className="text-xl align-top mt-1">pro</span>
                         </div>
 
                         <nav className="flex flex-col items-center gap-8">

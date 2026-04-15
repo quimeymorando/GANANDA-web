@@ -90,39 +90,78 @@ export default function ManifiestoPage() {
         <main className="min-h-screen bg-[var(--fondo-oscuro)] overflow-hidden">
 
             {/* ═══════════════════════════════════════════════════════════════
-                HERO — anima4.png full-bleed
-                85vh: lo suficiente para ser inmersivo, invita al scroll
+                HERO — ADN izquierda · Cannabis derecha
             ═══════════════════════════════════════════════════════════════ */}
-            <section className="relative min-h-[85vh] flex items-end">
-                {/* Imagen */}
-                <div className="absolute inset-0">
+            <section
+                className="relative min-h-screen flex items-center overflow-hidden"
+                style={{
+                    background: 'radial-gradient(ellipse at 50% 40%, #1a3a2a 0%, #0d1f15 60%, #060f09 100%)',
+                }}
+            >
+                {/* ADN — lateral izquierdo */}
+                <div
+                    className="absolute left-0 top-0 h-full hidden md:block w-[38%] pointer-events-none"
+                    style={{
+                        maskImage: 'linear-gradient(to right, black 20%, transparent 85%), linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+                        maskComposite: 'intersect',
+                        WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 85%), linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+                        WebkitMaskComposite: 'source-in',
+                    }}
+                >
                     <Image
                         src="/gananda1.jpeg"
-                        alt="GANANDA — Manifiesto"
+                        alt=""
                         fill
                         priority
-                        className="object-cover object-center"
-                        sizes="100vw"
-                    />
-
-                    {/* Degradé: oscuro arriba → verde profundo abajo */}
-                    <div
-                        className="absolute inset-0"
-                        style={{
-                            background: `linear-gradient(
-                                180deg,
-                                rgba(6,15,9,0.85) 0%,
-                                rgba(13,31,21,0.6) 30%,
-                                rgba(26,58,42,0.35) 55%,
-                                rgba(13,31,21,0.55) 75%,
-                                #060f09 100%
-                            )`,
-                        }}
+                        className="object-cover object-left"
+                        style={{ opacity: 0.28 }}
+                        sizes="38vw"
                     />
                 </div>
 
-                {/* Contenido del hero — anclado al bottom */}
-                <div ref={heroRef} className="relative z-10 w-full pb-16 md:pb-24 pt-40">
+                {/* Cannabis — lateral derecho */}
+                <div
+                    className="absolute right-0 top-0 h-full hidden md:block w-[38%] pointer-events-none"
+                    style={{
+                        maskImage: 'linear-gradient(to left, black 20%, transparent 85%), linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+                        maskComposite: 'intersect',
+                        WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 85%), linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+                        WebkitMaskComposite: 'source-in',
+                    }}
+                >
+                    <Image
+                        src="/gananda5.jpeg"
+                        alt=""
+                        fill
+                        priority
+                        className="object-cover object-right"
+                        style={{ opacity: 0.28 }}
+                        sizes="38vw"
+                    />
+                </div>
+
+                {/* Mobile — imagen de fondo */}
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        backgroundImage: "url('/gananda5.jpeg')",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        opacity: 0.45,
+                    }}
+                />
+
+                {/* Orbe central sutil */}
+                <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none"
+                    style={{
+                        background: 'radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 65%)',
+                        filter: 'blur(40px)',
+                    }}
+                />
+
+                {/* Contenido del hero — centrado */}
+                <div ref={heroRef} className="relative z-10 w-full py-32 md:py-40">
                     <div className="max-w-3xl mx-auto px-6 sm:px-10 text-center">
                         {/* Eyebrow */}
                         <motion.div
@@ -179,7 +218,7 @@ export default function ManifiestoPage() {
                 Proximidad Gestalt: espaciado corto entre frases hermanas
             ═══════════════════════════════════════════════════════════════ */}
             <section
-                className="relative py-16 md:py-24"
+                className="relative pt-28 pb-20 md:pt-40 md:pb-32"
                 style={{
                     background: 'linear-gradient(180deg, #060f09 0%, #0d1f15 50%, #0f2419 100%)',
                 }}
@@ -195,6 +234,24 @@ export default function ManifiestoPage() {
                 />
 
                 <div className="relative z-10 max-w-2xl mx-auto px-6 sm:px-10 text-center">
+
+                    {/* Separador decorativo */}
+                    <FadeIn className="flex items-center justify-center gap-4 mb-16 md:mb-20">
+                        <div className="h-px flex-1 max-w-[60px]" style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.4))' }} />
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style={{ opacity: 0.5 }}>
+                            <circle cx="14" cy="14" r="5" stroke="var(--dorado)" strokeWidth="0.8" />
+                            <line x1="14" y1="0" x2="14" y2="7" stroke="var(--dorado)" strokeWidth="0.6" />
+                            <line x1="14" y1="21" x2="14" y2="28" stroke="var(--dorado)" strokeWidth="0.6" />
+                            <line x1="0" y1="14" x2="7" y2="14" stroke="var(--dorado)" strokeWidth="0.6" />
+                            <line x1="21" y1="14" x2="28" y2="14" stroke="var(--dorado)" strokeWidth="0.6" />
+                            <line x1="3.5" y1="3.5" x2="8.5" y2="8.5" stroke="var(--dorado)" strokeWidth="0.5" />
+                            <line x1="19.5" y1="19.5" x2="24.5" y2="24.5" stroke="var(--dorado)" strokeWidth="0.5" />
+                            <line x1="24.5" y1="3.5" x2="19.5" y2="8.5" stroke="var(--dorado)" strokeWidth="0.5" />
+                            <line x1="8.5" y1="19.5" x2="3.5" y2="24.5" stroke="var(--dorado)" strokeWidth="0.5" />
+                        </svg>
+                        <div className="h-px flex-1 max-w-[60px]" style={{ background: 'linear-gradient(90deg, rgba(201,168,76,0.4), transparent)' }} />
+                    </FadeIn>
+
                     {/* Frases introductorias */}
                     <div className="space-y-5 md:space-y-7">
                         {fragmentos.map((frag, i) => (

@@ -175,7 +175,7 @@ export default function EquipoPage() {
                 HERO
             ═══════════════════════════════════════════════════════════════ */}
             <section
-                className="relative flex items-center justify-center pattern-celular"
+                className="relative flex items-center justify-center pattern-celular min-h-screen"
                 style={{
                     background: 'radial-gradient(ellipse at 40% 50%, #1a3a2a 0%, #0d1f15 60%, #060f09 100%)',
                 }}
