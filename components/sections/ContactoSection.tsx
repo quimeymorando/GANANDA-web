@@ -50,19 +50,27 @@ export default function ContactoSection() {
                             transition={{ duration: 0.7, delay: 0.1 }}
                             className="heading-lg text-[var(--texto-oscuro)] mb-4"
                         >
-                            Iniciemos una
+                            Hablemos de tu
                             <br />
-                            <span className="text-gradient-verde">conversación</span>
+                            <span className="text-gradient-verde">proyecto</span>
                         </motion.h2>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.7, delay: 0.2 }}
-                            className="body-lg text-[var(--verde-musgo)]"
+                            className="body-lg text-[var(--verde-musgo)] mb-4"
                         >
-                            Trabajamos con grandes productores y empresas que buscan
-                            elevar sus operaciones con biotecnología de vanguardia.
+                            Trabajamos con empresas que entienden que la genética, la sanidad y la consistencia son decisiones estratégicas.
+                        </motion.p>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7, delay: 0.25 }}
+                            className="text-sm text-[var(--texto-gris)]"
+                        >
+                            El primer paso es entender dónde estás hoy. A partir de ahí, definimos cómo avanzar.
                         </motion.p>
                     </div>
 

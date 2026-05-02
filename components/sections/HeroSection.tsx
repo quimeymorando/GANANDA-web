@@ -119,16 +119,6 @@ export default function HeroSection() {
                         <em className="text-gradient-verde not-italic">trazabilidad</em>
                         {' '}que la nueva salud exige.
                     </motion.h1>
-                    <motion.p
-                        variants={fadeUp}
-                        initial="hidden"
-                        animate="visible"
-                        custom={0.9}
-                        className="mt-5 max-w-sm text-sm md:text-base text-[var(--texto-gris)] leading-relaxed italic font-editorial"
-                        style={{ opacity: 0.7 }}
-                    >
-                        La única empresa en el mundo que puede prometer un resultado en salud sobre la sanidad del cannabis.
-                    </motion.p>
                 </div>
             </div>
 

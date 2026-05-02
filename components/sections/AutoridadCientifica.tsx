@@ -6,30 +6,30 @@ import { TrendingUp, Clock, ClipboardList, ShieldCheck } from 'lucide-react'
 
 const metricas = [
     {
-        valor: '4x – 8x',
-        label: 'Multiplicación de productividad',
-        descripcion: 'Escalamos la producción de plantas cada tres semanas mediante micropropagación del meristema.',
+        valor: '30+',
+        label: 'Trayectoria',
+        descripcion: 'Más de 30 años de experiencia en saneamiento y propagación vegetal. Desarrollo continuo en cultivos de alto valor con enfoque en calidad y consistencia productiva.',
         Icono: TrendingUp,
         grande: false,
     },
     {
-        valor: '8x',
-        label: 'Reducción de tiempo',
-        descripcion: 'En Doble Haploide: de 8 años a 1 año en desarrollo de variedades estables.',
-        Icono: Clock,
-        grande: false,
-    },
-    {
         valor: '+40',
-        label: 'Protocolos establecidos',
-        descripcion: 'Protocolos exclusivos de cultivo validados y documentados en múltiples especies.',
+        label: 'Plataforma técnica',
+        descripcion: '+40 protocolos desarrollados y validados. Metodologías propias aplicadas en múltiples especies, con procesos documentados y escalables.',
         Icono: ClipboardList,
         grande: false,
     },
     {
-        valor: '100%',
-        label: 'Saneamiento de origen',
-        descripcion: 'Eliminación de virus desde el inicio. Plantas sanas, libres de patógenos, con vigor superior.',
+        valor: 'DH',
+        label: 'Investigación avanzada',
+        descripcion: 'Desarrollo en doble haploides (DH). Participación en avances pioneros en soja, con proyección hacia cannabis y otras especies estratégicas.',
+        Icono: Clock,
+        grande: false,
+    },
+    {
+        valor: 'VITRON',
+        label: 'Origen del sistema',
+        descripcion: 'Impulsado por Vitron. Laboratorio especializado en cultivo de tejidos vegetales, base científica y operativa de GANANDA-Pro.',
         Icono: ShieldCheck,
         grande: false,
     },
@@ -120,9 +120,9 @@ export default function AutoridadCientifica() {
                         transition={{ duration: 0.7, delay: 0.1 }}
                         className="heading-lg text-[var(--texto-oscuro)] mb-4"
                     >
-                        Datos que respaldan
+                        Respaldo científico que sostiene
                         <br />
-                        <span className="text-gradient-verde">nuestra innovación</span>
+                        <span className="text-gradient-verde">cada decisión</span>
                     </motion.h2>
 
                     {/* Badge VITRON */}
@@ -151,8 +151,7 @@ export default function AutoridadCientifica() {
                         className="body-lg max-w-xl mx-auto"
                         style={{ color: 'var(--verde-musgo)' }}
                     >
-                        Más de tres décadas de investigación aplicada, protocolos exclusivos
-                        y resultados comprobados en cultivos de alto valor.
+                        Más de tres décadas de investigación aplicada, desarrollo de protocolos propios y participación activa en proyectos de innovación de alto impacto.
                     </motion.p>
                 </div>
 

@@ -74,9 +74,9 @@ export default function VisionFuturo() {
                         transition={{ duration: 0.7, delay: 0.1 }}
                         className="heading-lg text-[var(--texto-claro)] mb-6"
                     >
-                        Construyendo el futuro
+                        Hacia un modelo de consumo
                         <br />
-                        <span className="text-gradient-dorado">del cannabis consciente</span>
+                        <span className="text-gradient-dorado">responsable basado en ciencia</span>
                     </motion.h2>
 
                     <motion.p
@@ -85,8 +85,7 @@ export default function VisionFuturo() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="body-lg text-[var(--texto-gris)] max-w-2xl mx-auto"
                     >
-                        GANANDA no trabaja con productores pequeños. Trabajamos con grandes empresas
-                        que pueden aprovechar plenamente el potencial de la biotecnología aplicada.
+                        Nuestra visión es impulsar una nueva etapa en la industria del cannabis, donde el conocimiento científico permita integrar su uso de forma responsable, segura y cada vez más vinculada a la salud.
                     </motion.p>
                 </div>
 
@@ -140,14 +139,16 @@ export default function VisionFuturo() {
                     className="mt-24 text-center"
                 >
                     <div
-                        className="inline-block px-8 py-10 border border-[rgba(201,168,76,0.2)] max-w-2xl"
+                        className="inline-block px-12 py-14 border border-[rgba(201,168,76,0.2)] max-w-4xl w-full"
                         style={{ background: 'rgba(13,31,21,0.5)' }}
                     >
                         <p className="font-editorial text-xl md:text-2xl text-[var(--texto-claro)] italic mb-4">
-                            &ldquo;GANANDA es el puente entre lo que somos biológicamente
-                            y lo que podemos llegar a ser conscientemente.&rdquo;
+                            El futuro del cannabis no está en la polarización entre lo medicinal y lo recreativo, sino en la construcción de un modelo donde el consumo se base en información, control y responsabilidad. Creemos en un enfoque donde la calidad del producto, la consistencia genética y el respaldo científico sean la base para un uso consciente, tanto en aplicaciones de salud como en el uso adulto.
                         </p>
                         <div className="divider-dorado" />
+                        <p className="text-[var(--dorado)] text-sm tracking-widest label-caps mt-4">
+                            No se trata de limitar el acceso, sino de elevar los estándares.
+                        </p>
                     </div>
                 </motion.div>
             </div>

@@ -3,41 +3,44 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Sprout, Database, FlaskConical, GitBranch } from 'lucide-react'
 
 const servicios = [
     {
         numero: '01',
-        titulo: 'Cultivo de Tejidos',
-        subtitulo: 'Micropropagación de élite',
+        titulo: 'Saneamiento y Micropropagación',
+        subtitulo: 'Material de alta calidad sanitaria',
         descripcion:
-            'Genética de cultivo de tejidos, clones listos para producción, restauración de cultivares y almacenamiento genético a largo plazo.',
-        // CMS-ready: este campo puede ser editado desde Sanity/Contentful
+            'Producción escalada de plantas mediante cultivo de meristemas, con uniformidad genética y libre de patógenos.',
         tag: 'Producción',
+        Icono: Sprout,
     },
     {
         numero: '02',
-        titulo: 'Genética y Saneamiento',
-        subtitulo: 'Integridad desde el origen',
+        titulo: 'Banco de Germoplasma In Vitro',
+        subtitulo: 'Conservación de genética',
         descripcion:
-            'Diagnósticos moleculares avanzados, pruebas de HLVd, huella dactilar de ADN y detección de patógenos para proteger genética de alto valor.',
+            'Preservación y gestión de material genético vegetal en laboratorio para garantizar disponibilidad futura y trazabilidad.',
         tag: 'Laboratorio',
+        Icono: Database,
     },
     {
         numero: '03',
-        titulo: 'I+D+i',
-        subtitulo: 'Ciencia en movimiento',
+        titulo: 'Investigación y Desarrollo Genético',
+        subtitulo: 'Mejoramiento continuo',
         descripcion:
-            'Investigación continua en biología de cultivo de tejidos, diagnóstico molecular y genómica del cannabis. Protocolos propietarios en desarrollo.',
+            'Desarrollo de soluciones genéticas para optimizar performance productiva y adaptabilidad a diferentes entornos.',
         tag: 'Investigación',
+        Icono: FlaskConical,
     },
     {
         numero: '04',
-        titulo: 'Consultoría AgTech',
-        subtitulo: 'Estrategia para grandes productores',
+        titulo: 'Desarrollo de Doble Haploides (DH)',
+        subtitulo: 'Acelerar la mejora genética',
         descripcion:
-            'Acompañamiento técnico integral para productores autorizados que buscan escalar operaciones con integridad genética y trazabilidad total.',
+            'Tecnologías avanzadas para obtener líneas homocigotas en menor tiempo, reduciendo incertidumbre en desarrollo de variedades.',
         tag: 'Consultoría',
+        Icono: GitBranch,
     },
 ]
 
@@ -57,35 +60,46 @@ function ServicioCard({
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: index * 0.12, ease: 'easeOut' }}
-            className="card-servicio group cursor-default"
+            className="metrica-card group cursor-default"
         >
+            {/* Icono */}
+            <div className="mb-4" style={{ color: 'var(--verde-musgo)', opacity: 0.75 }}>
+                <servicio.Icono size={28} strokeWidth={1.5} />
+            </div>
+
             {/* Número + Tag */}
             <div className="flex items-start justify-between mb-6">
                 <span
                     className="font-editorial text-4xl"
-                    style={{ color: 'rgba(201,168,76,0.2)' }}
+                    style={{ color: 'rgba(201,168,76,0.25)' }}
                 >
                     {servicio.numero}
                 </span>
-                <span className="label-caps text-xs px-3 py-1 border border-[rgba(201,168,76,0.2)] text-[var(--dorado)] tracking-widest">
+                <span className="label-caps text-xs px-3 py-1 border border-[rgba(201,168,76,0.3)] text-[var(--dorado)] tracking-widest">
                     {servicio.tag}
                 </span>
             </div>
 
             {/* Título */}
-            <h3 className="heading-md text-[var(--texto-claro)] mb-1 group-hover:text-[var(--dorado-claro)] transition-colors duration-300">
+            <h3 className="heading-md text-[var(--texto-oscuro)] mb-1 group-hover:text-[var(--verde-musgo)] transition-colors duration-300">
                 {servicio.titulo}
             </h3>
 
             {/* Subtítulo */}
-            <p className="label-caps text-[var(--verde-brote)] tracking-widest text-xs mb-4">
+            <p className="label-caps text-[var(--verde-musgo)] tracking-widest text-xs mb-4">
                 {servicio.subtitulo}
             </p>
 
             {/* Descripción */}
-            <p className="text-[var(--texto-gris)] text-sm leading-relaxed">
+            <p className="text-[var(--texto-oscuro)] text-sm leading-relaxed" style={{ opacity: 0.75 }}>
                 {servicio.descripcion}
             </p>
+
+            {/* Línea inferior dorada */}
+            <div
+                className="mt-4 h-px"
+                style={{ background: 'linear-gradient(90deg, var(--dorado), transparent)' }}
+            />
         </motion.article>
     )
 }
@@ -97,10 +111,7 @@ export default function ServiciosSection() {
     return (
         <section
             id="servicios"
-            className="section-padding"
-            style={{
-                background: 'linear-gradient(180deg, #0d1f15 0%, #111f18 50%, #0d1f15 100%)',
-            }}
+            className="section-padding section-clara"
         >
             <div className="container-anima">
                 {/* Header */}
@@ -122,22 +133,22 @@ export default function ServiciosSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.1 }}
-                        className="heading-lg text-[var(--texto-claro)] mb-4"
+                        className="heading-lg text-[var(--texto-oscuro)] mb-4"
                     >
-                        Tecnología que{' '}
-                        <span className="text-gradient-dorado">transforma</span>
+                        Infraestructura científica para la{' '}
+                        <span className="text-gradient-dorado">nueva industria</span>
                         <br />
-                        la industria
+                        del cannabis
                     </motion.h2>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="body-lg text-[var(--texto-gris)] max-w-xl mx-auto"
+                        className="body-lg max-w-xl mx-auto"
+                        style={{ color: 'var(--verde-musgo)' }}
                     >
-                        Servicios diseñados para grandes productores que exigen
-                        integridad genética, escalabilidad y resultados comprobados.
+                        Servicios construidos sobre base científica para garantizar estabilidad genética, escalabilidad y desarrollo estratégico en cada etapa del sistema productivo.
                     </motion.p>
                 </div>
 

@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-export default function PropositoSection() {
+export default function PropositoSection({ frase, children }: { frase?: string; children?: React.ReactNode }) {
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -42,17 +42,14 @@ export default function PropositoSection() {
                     />
                 </motion.div>
 
-                {/* Copy principal */}
+                {/* Frase */}
                 <motion.p
                     initial={{ opacity: 0, y: 28 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="font-editorial italic text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[var(--texto-claro)] leading-[1.5] max-w-3xl mx-auto px-2"
                 >
-                    Transformamos conocimiento científico en soluciones concretas para quienes buscan liderar la nueva era del cannabis con{' '}
-                    <span className="text-gradient-dorado not-italic">visión</span>,{' '}
-                    <span className="text-gradient-dorado not-italic">trazabilidad</span> y{' '}
-                    <span className="text-gradient-dorado not-italic">ventaja competitiva.</span>
+                    {children ?? frase}
                 </motion.p>
 
                 {/* Línea decorativa inferior */}

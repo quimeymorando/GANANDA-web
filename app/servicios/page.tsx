@@ -348,13 +348,13 @@ export default function ServiciosPage() {
             <section className="section-padding">
                 <div className="container-anima">
 
-                    {/* Servicio 1 — Micropropagación */}
+                    {/* Servicio 1 — Saneamiento y Micropropagación */}
                     <ServiceSection
                         numero="01"
                         tag="Escalabilidad Masiva"
-                        titulo="Micropropagación y Cultivo de Tejidos"
-                        concepto="Multiplicación exponencial, material genéticamente uniforme"
-                        descripcion="Multiplicamos la producción de plantas entre 4x y 8x cada tres semanas mediante micropropagación del meristema. Material vegetal uniforme, vigoroso y listo para producción. Una ventaja que ningún vivero tradicional puede igualar."
+                        titulo="Saneamiento y Micropropagación"
+                        concepto="Material vegetal de alta calidad sanitaria y uniformidad genética"
+                        descripcion="Producción de plantas a partir de cultivo de meristemas, orientado a obtener material vegetal con alta calidad sanitaria y uniformidad genética. Escalado eficiente de genéticas seleccionadas, listas para producción."
                         highlights={[
                             { valor: '4x–8x', label: 'Multiplicación' },
                             { valor: '3 sem.', label: 'Ciclo de producción' },
@@ -364,29 +364,29 @@ export default function ServiciosPage() {
                         visual={<VisualMicropropagacion />}
                     />
 
-                    {/* Servicio 2 — Saneamiento y Genética */}
+                    {/* Servicio 2 — Banco de Germoplasma In Vitro */}
                     <ServiceSection
                         numero="02"
-                        tag="Pureza desde el Origen"
-                        titulo="Saneamiento y Genética"
-                        concepto="El punto de partida limpio que todo cultivo merece"
-                        descripcion="Eliminamos los virus desde el origen. Saneamiento de cultivos y genética libre de patógenos, incluyendo HLVd. Garantizamos la integridad genética de cada variedad. Nuestra tecnología de Doble Haploide reduce el tiempo de desarrollo de variedades estables de 8 años a tan solo 1 año."
+                        tag="Conservación Genética"
+                        titulo="Banco de Germoplasma In Vitro"
+                        concepto="Preservación de genética de alto valor en condiciones controladas"
+                        descripcion="Servicio integral de conservación, resguardo y gestión de material genético vegetal en condiciones controladas de laboratorio. Permite preservar genética de alto valor, asegurar su disponibilidad futura y respaldar programas productivos y de mejoramiento."
                         highlights={[
                             { valor: '8 → 1', label: 'Años a meses (Doble Haploide)' },
-                            { valor: '100%', label: 'Libre de HLVd' },
+                            { valor: '100%', label: 'Libre de patógenos' },
                         ]}
                         icono={Dna}
                         invertido={true}
                         visual={<VisualSaneamiento />}
                     />
 
-                    {/* Servicio 3 — I+D+i */}
+                    {/* Servicio 3 — Investigación y Desarrollo Genético */}
                     <ServiceSection
                         numero="03"
-                        tag="Rigor Científico"
-                        titulo="I+D+i y Protocolos Exclusivos"
-                        concepto="Más de tres décadas de investigación aplicada"
-                        descripcion="Más de 40 protocolos establecidos y documentados en múltiples especies. No somos transgénicos; somos perfeccionistas de la naturaleza. Desarrollamos soluciones a medida para la industria del THC y grandes empresas que buscan diferenciarse con ciencia real. Fundados en los años 90, con conocimiento transmitido por generaciones."
+                        tag="Mejoramiento Genético"
+                        titulo="Investigación y Desarrollo Genético"
+                        concepto="Soluciones genéticas orientadas a mejorar la performance productiva"
+                        descripcion="Desarrollo de nuevas soluciones genéticas orientadas a mejorar la performance productiva. Incluye líneas de trabajo en poliploidía (tetraploides) y desarrollo de genéticas estables adaptadas a distintos entornos productivos."
                         highlights={[
                             { valor: '+40', label: 'Protocolos exclusivos' },
                             { valor: '30+', label: 'Años de investigación' },
@@ -396,16 +396,16 @@ export default function ServiciosPage() {
                         visual={<VisualIDI />}
                     />
 
-                    {/* Servicio 4 — Seguridad y Trazabilidad */}
+                    {/* Servicio 4 — Desarrollo de Doble Haploides */}
                     <ServiceSection
                         numero="04"
-                        tag="Confianza Global"
-                        titulo="Seguridad y Trazabilidad"
-                        concepto="Del laboratorio al cultivo final, sin interrupciones"
-                        descripcion="Referentes en seguridad alimentaria. Ofrecemos trazabilidad completa desde la planta en laboratorio hasta el producto final. Producción sin tierra, en medios hidropónicos que aseguran sanidad total. Una ventaja que genera confianza y valor agregado en mercados internacionales como China, Alemania y Estados Unidos."
+                        tag="Tecnología Avanzada"
+                        titulo="Desarrollo de Doble Haploides (DH)"
+                        concepto="Aceleración de procesos de mejoramiento genético"
+                        descripcion="Implementación de tecnologías avanzadas para la obtención de líneas completamente homocigotas en menor tiempo. Aplicable a programas de mejoramiento genético que buscan acelerar procesos y reducir incertidumbre en el desarrollo de nuevas variedades."
                         highlights={[
-                            { valor: '100%', label: 'Trazabilidad verificada' },
-                            { valor: 'Global', label: 'Alcance internacional' },
+                            { valor: '8 → 1', label: 'Reducción de tiempo' },
+                            { valor: '100%', label: 'Homocigotas' },
                         ]}
                         icono={ShieldCheck}
                         invertido={true}
